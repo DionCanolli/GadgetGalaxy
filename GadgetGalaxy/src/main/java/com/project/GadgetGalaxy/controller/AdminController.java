@@ -105,7 +105,13 @@ public class AdminController {
     @PostMapping(value = "/delete-product")
     public String deleteProduct(@RequestParam String productName){
         Product product = modelService.getProductRepository().findProductByProductName(productName).get();
+        modelService.getCartRepository().deleteCartItemByProductName(productName);
+        modelService.getCookieCartRepository().deleteCookieCartByProductName(productName);
+        modelService.getWhishlistRepository().deleteWishlistItemByProductName(productName);
+        modelService.getCookieWishlistRepository().deleteCookieWishlistItemByProductName(productName);
+        modelService.getTransactionsRepository().deleteTransactionByProductName(productName);
         modelService.getProductRepository().delete(product);
+
 
         Path path = Paths.get("C:/Users/HP/Desktop/Java Projects/GadgetGalaxy - tech e-commerce/images/" + productName
                 + ".jpg");

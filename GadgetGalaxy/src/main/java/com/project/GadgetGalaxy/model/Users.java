@@ -15,6 +15,8 @@ import java.util.List;
 
 @Entity
 @Table
+@Getter
+@Setter
 public class Users {
 
     @Id
@@ -39,6 +41,7 @@ public class Users {
     @JoinColumn(name = "UserRole")
     private Roles userRole;
 
+    @Setter
     @OneToMany(mappedBy = "userTransaction")
     private List<Transactions> transactionsOfUser;
 
@@ -61,77 +64,5 @@ public class Users {
     }
 
     public Users() {
-    }
-
-    public String getUserFirstName() {
-        return userFirstName;
-    }
-
-    public void setUserFirstName(String userFirstName) {
-        this.userFirstName = userFirstName;
-    }
-
-    public String getUserLastName() {
-        return userLastName;
-    }
-
-    public void setUserLastName(String userLastName) {
-        this.userLastName = userLastName;
-    }
-
-    public String getUserEmail() {
-        return userEmail;
-    }
-
-    public void setUserEmail(String userEmail) {
-        this.userEmail = userEmail;
-    }
-
-    public String getUserPassword() {
-        return userPassword;
-    }
-
-    public void setUserPassword(String userPassword) {
-        this.userPassword = userPassword;
-    }
-
-    public Roles getUserRole() {
-        return userRole;
-    }
-
-    public void setUserRole(Roles userRole) {
-        this.userRole = userRole;
-    }
-
-    public List<Transactions> getTransactionsOfUser() {
-        return transactionsOfUser;
-    }
-
-    public void setTransactionsOfUser(List<Transactions> transactionsOfUser) {
-        this.transactionsOfUser = transactionsOfUser;
-    }
-
-    public List<Cart> getCartOfUser() {
-        return cartOfUser;
-    }
-
-    public void setCartOfUser(List<Cart> cartOfUser) {
-        this.cartOfUser = cartOfUser;
-    }
-
-    public List<Wishlist> getWishlistOfUser() {
-        return wishlistOfUser;
-    }
-
-    public void setWishlistOfUser(List<Wishlist> wishlistOfUser) {
-        this.wishlistOfUser = wishlistOfUser;
-    }
-
-    public String getConfirmPassword() {
-        return confirmPassword;
-    }
-
-    public void setConfirmPassword(String confirmPassword) {
-        this.confirmPassword = confirmPassword;
     }
 }

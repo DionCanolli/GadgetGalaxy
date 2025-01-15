@@ -1,7 +1,11 @@
 package com.project.GadgetGalaxy.model;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
+@Setter
+@Getter
 @Entity
 @Table
 public class CookieWishlist {
@@ -25,27 +29,4 @@ public class CookieWishlist {
     public CookieWishlist() {
     }
 
-    public Long getCookieWishlistID() {
-        return cookieWishlistID;
-    }
-
-    public void setCookieWishlistID(Long cookieWishlistID) {
-        this.cookieWishlistID = cookieWishlistID;
-    }
-
-    public CookieHolder getCookieWishlistCookieValue() {
-        return cookieWishlistCookieValue;
-    }
-
-    public void setCookieWishlistCookieValue(CookieHolder cookieWishlistCookieValue) {
-        this.cookieWishlistCookieValue = cookieWishlistCookieValue;
-    }
-
-    public Product getCookieWishlistProduct() {
-        return cookieWishlistProduct;
-    }
-
-    public void setCookieWishlistProduct(Product cookieWishlistProduct) {
-        this.cookieWishlistProduct = cookieWishlistProduct;
-    }
 }

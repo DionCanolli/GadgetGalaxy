@@ -14,8 +14,8 @@ public class GadgetGalaxyApplication implements WebMvcConfigurer {
 
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		// Map the URL pattern /images/** to the file system path
 		registry.addResourceHandler("/images/**")
-				.addResourceLocations("your/path/to/images/");
-
+				.addResourceLocations("file:/C:/Users/HP/Desktop/Java Projects/GadgetGalaxy - tech e-commerce/images/");
 	}
 }

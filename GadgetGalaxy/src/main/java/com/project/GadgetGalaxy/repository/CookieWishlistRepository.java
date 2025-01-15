@@ -13,19 +13,20 @@ import java.util.List;
 @Repository
 public interface CookieWishlistRepository extends JpaRepository<CookieWishlist, Long> {
 
-    // Gjej krejt elementet e CookieWishlist ne baz te emrin te Cookies (qe ruhet ne CookieHolder, e cila ruhet ne CookieWishlist
     List<CookieWishlist> findAllCookieWishlistByCookieWishlistCookieValueCookieValue(String cookieValue);
 
-    // Gjeje nje CookieWishlist by cookievalue and productid
     CookieWishlist findCookieWishlistByCookieWishlistCookieValueCookieValueAndCookieWishlistProductProductID(
             String cookieValue, Long productID);
 
-    // Fshij produktin ne cookiewishlist ne baz te vleres se cookies (qe e unifikon kete cookie) dhe productName qe eshte
-    // property e properties Product cookieWishlistProduct
     @Transactional
-    @Modifying //  Indicates that this query modifies the data
+    @Modifying
     @Query(value = "DELETE FROM CookieWishlist cw WHERE cw.cookieWishlistCookieValue.cookieValue = :cookieValue" +
             " AND cw.cookieWishlistProduct.productName = :productName")
     void deleteCookieWishlistItemByCookieValueAndProductName(@Param("cookieValue") String cookieValue,
                                                              @Param("productName") String productName);
+
+    @Transactional
+    @Modifying
+    @Query(value = "DELETE FROM CookieWishlist cw WHERE cw.cookieWishlistProduct.productName = :productName")
+    void deleteCookieWishlistItemByProductName(@Param("productName") String productName);
 }

@@ -38,4 +38,9 @@ public interface CookieCartRepository extends JpaRepository<CookieCart, Long> {
 
     @Query(value = "SELECT SUM(cc.totalPrice) FROM CookieCart cc WHERE cc.cookieCartCookieValue.cookieValue = :cookieValue")
     public Integer getSumOfTotalPrice(@Param("cookieValue") String cookieValue);
+
+    @Transactional
+    @Modifying
+    @Query(value = "DELETE FROM CookieCart cc WHERE cc.cookieCartProduct.productName = :productName")
+    public void deleteCookieCartByProductName(@Param("productName") String productName);
 }

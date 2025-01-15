@@ -14,17 +14,19 @@ import java.util.List;
 @Repository
 public interface WhishlistRepository extends JpaRepository<Wishlist, Long> {
 
-    // Gjej krejt elementet ne tabelen wishlist ne baz te userit
     List<Wishlist> findAllWishlistByUserWishlistUserEmail(String userEmail);
 
-    // Gjeje nje Wishlist by user email and productid
     Wishlist findWishlistByUserWishlistUserEmailAndProductWishlistProductID(String userEmail, Long productID);
 
-    // Fshij produktin ne wishlist ne baz te emailes se userit dhe productName
     @Transactional
-    @Modifying //  Indicates that this query modifies the data
+    @Modifying
     @Query(value = "DELETE FROM Wishlist w WHERE w.userWishlist.userEmail = :userEmail" +
             " AND w.productWishlist.productName = :productName")
     void deleteWishlistItemByUserEmailAndProductName(@Param("userEmail") String userEmail,
                                                      @Param("productName") String productName);
+
+    @Transactional
+    @Modifying
+    @Query(value = "DELETE FROM Wishlist w WHERE w.productWishlist.productName = :productName")
+    void deleteWishlistItemByProductName(@Param("productName") String productName);
 }

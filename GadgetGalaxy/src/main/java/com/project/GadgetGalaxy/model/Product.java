@@ -8,6 +8,8 @@ import lombok.Setter;
 
 import java.util.List;
 
+@Setter
+@Getter
 @Entity
 @Table
 public class Product {
@@ -61,91 +63,4 @@ public class Product {
     public Product() {
     }
 
-    public Long getProductID() {
-        return productID;
-    }
-
-    public void setProductID(Long productID) {
-        this.productID = productID;
-    }
-
-    public String getProductName() {
-        return productName;
-    }
-
-    public void setProductName(String productName) {
-        this.productName = productName;
-    }
-
-    public Category getProductCategory() {
-        return productCategory;
-    }
-
-    public void setProductCategory(Category productCategory) {
-        this.productCategory = productCategory;
-    }
-
-    public List<Transactions> getTransactionsOfUser() {
-        return transactionsOfUser;
-    }
-
-    public void setTransactionsOfUser(List<Transactions> transactionsOfUser) {
-        this.transactionsOfUser = transactionsOfUser;
-    }
-
-    public List<Cart> getCartsOfProduct() {
-        return cartsOfProduct;
-    }
-
-    public void setCartsOfProduct(List<Cart> cartsOfProduct) {
-        this.cartsOfProduct = cartsOfProduct;
-    }
-
-    public List<Wishlist> getWishlistsOfProduct() {
-        return wishlistsOfProduct;
-    }
-
-    public void setWishlistsOfProduct(List<Wishlist> wishlistsOfProduct) {
-        this.wishlistsOfProduct = wishlistsOfProduct;
-    }
-
-    public double getProductPrice() {
-        return productPrice;
-    }
-
-    public void setProductPrice(double productPrice) {
-        this.productPrice = productPrice;
-    }
-
-    public String getProductShortDescription() {
-        return productShortDescription;
-    }
-
-    public void setProductShortDescription(String productShortDescription) {
-        this.productShortDescription = productShortDescription;
-    }
-
-    public String getProductDescription() {
-        return productDescription;
-    }
-
-    public void setProductDescription(String productDescription) {
-        this.productDescription = productDescription;
-    }
-
-    public int getProductQuantity() {
-        return productQuantity;
-    }
-
-    public void setProductQuantity(int productQuantity) {
-        this.productQuantity = productQuantity;
-    }
-
-    public String getProductImage() {
-        return productImage;
-    }
-
-    public void setProductImage(String productImage) {
-        this.productImage = productImage;
-    }
 }

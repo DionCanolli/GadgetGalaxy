@@ -2,7 +2,11 @@ package com.project.GadgetGalaxy.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
+@Setter
+@Getter
 @Entity
 @Table
 public class CookieCart {
@@ -34,43 +38,4 @@ public class CookieCart {
     public CookieCart() {
     }
 
-    public Long getCookieCartID() {
-        return cookieCartID;
-    }
-
-    public void setCookieCartID(Long cookieCartID) {
-        this.cookieCartID = cookieCartID;
-    }
-
-    public CookieHolder getCookieCartCookieValue() {
-        return cookieCartCookieValue;
-    }
-
-    public void setCookieCartCookieValue(CookieHolder cookieCartCookieValue) {
-        this.cookieCartCookieValue = cookieCartCookieValue;
-    }
-
-    public Product getCookieCartProduct() {
-        return cookieCartProduct;
-    }
-
-    public void setCookieCartProduct(Product cookieCartProduct) {
-        this.cookieCartProduct = cookieCartProduct;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
-    public double getTotalPrice() {
-        return totalPrice;
-    }
-
-    public void setTotalPrice(double totalPrice) {
-        this.totalPrice = totalPrice;
-    }
 }

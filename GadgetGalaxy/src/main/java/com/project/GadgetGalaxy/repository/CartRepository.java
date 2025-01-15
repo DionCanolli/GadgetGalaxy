@@ -39,4 +39,9 @@ public interface CartRepository extends JpaRepository<Cart, Long> {
 
     @Query(value = "SELECT SUM(c.totalPrice) FROM Cart c WHERE c.userCart.userEmail = :userEmail")
     public Integer getSumOfTotalPrice(@Param("userEmail") String userEmail);
+
+    @Transactional
+    @Modifying
+    @Query(value = "DELETE FROM Cart c WHERE c.productCart.productName = :productName")
+    public void deleteCartItemByProductName(@Param("productName") String productName);
 }

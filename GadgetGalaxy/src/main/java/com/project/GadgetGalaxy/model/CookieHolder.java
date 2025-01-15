@@ -1,7 +1,11 @@
 package com.project.GadgetGalaxy.model;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
+@Setter
+@Getter
 @Entity
 @Table
 public class CookieHolder {
@@ -18,19 +22,4 @@ public class CookieHolder {
     public CookieHolder() {
     }
 
-    public String getCookieValue() {
-        return cookieValue;
-    }
-
-    public void setCookieValue(String cookieValue) {
-        this.cookieValue = cookieValue;
-    }
-
-    public Long getCookieHolderID() {
-        return cookieHolderID;
-    }
-
-    public void setCookieHolderID(Long cookieHolderID) {
-        this.cookieHolderID = cookieHolderID;
-    }
 }

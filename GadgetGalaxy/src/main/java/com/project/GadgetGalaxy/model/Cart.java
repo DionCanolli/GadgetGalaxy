@@ -6,6 +6,8 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
+@Setter
+@Getter
 @Entity
 @Table
 public class Cart {
@@ -37,43 +39,4 @@ public class Cart {
     public Cart() {
     }
 
-    public Long getCartItemID() {
-        return cartItemID;
-    }
-
-    public void setCartItemID(Long cartItemID) {
-        this.cartItemID = cartItemID;
-    }
-
-    public Users getUserCart() {
-        return userCart;
-    }
-
-    public void setUserCart(Users userCart) {
-        this.userCart = userCart;
-    }
-
-    public Product getProductCart() {
-        return productCart;
-    }
-
-    public void setProductCart(Product productCart) {
-        this.productCart = productCart;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
-    public double getTotalPrice() {
-        return totalPrice;
-    }
-
-    public void setTotalPrice(double totalPrice) {
-        this.totalPrice = totalPrice;
-    }
 }
